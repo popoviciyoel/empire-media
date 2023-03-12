@@ -10,7 +10,6 @@ const useSocket = () => {
   const [change, setChange] = useState();
   const [percentChange, setPercentChange] = useState();
   useEffect(() => {
-    console.log("in effect once");
     // subsribe to socket server
     socket.onopen = (ev) => {
       const msg = { type: "SUBSCRIBE", instruments: ["s-aapl"] };
@@ -26,11 +25,6 @@ const useSocket = () => {
       setLast(formatDataToPercentage(stock["last"]));
       setChange(formatDataToPercentage(stock["change"]));
       setPercentChange(formatDataToPercentage(stock["percentChange"]));
-    };
-
-    return () => {
-      const msg = { type: "UNSUBSCRIBE", instruments: ["s-aapl"] };
-      console.log(socket);
     };
   }, []);
   return { time, last, change, percentChange };

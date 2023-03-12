@@ -10,13 +10,13 @@ function configureTimeParameters(selectedPeriod) {
   const endDate = new Date(currentDate);
   const startDate = new Date(currentDate);
   // Check if it's the weekend, 6 represents saturday, 0 is monday, if it it set date to Friday to retrieve last open market transactions
-  if (startDate.getDay() == 0) {
+  if (startDate.getDay() === 0) {
     startDate.setDate(startDate.getDate() - 2);
     endDate.setDate(endDate.getDate() - 2);
     endDate.setMinutes(0);
     endDate.setHours(16);
   }
-  if (startDate.getDay() == 6) {
+  if (startDate.getDay() === 6) {
     startDate.setDate(startDate.getDate() - 1);
     endDate.setDate(endDate.getDate() - 1);
     endDate.setMinutes(0);
@@ -25,7 +25,7 @@ function configureTimeParameters(selectedPeriod) {
   // if the hours of trading is inactive when user on setTimeZone to last active trading session
   if (
     startDate.getHours() < 9 ||
-    (startDate.getHours() == 9 && startDate.getMinutes() < 30) ||
+    (startDate.getHours() === 9 && startDate.getMinutes() < 30) ||
     startDate.getHours() >= 16
   ) {
     endDate.setMinutes(0);
