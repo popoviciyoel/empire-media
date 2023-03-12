@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/react-gh-pages/static/css/main.5221f1cf.css",
-    "main.js": "/react-gh-pages/static/js/main.49cddb6a.js",
-    "static/js/787.4c9cbaa8.chunk.js": "/react-gh-pages/static/js/787.4c9cbaa8.chunk.js",
-    "index.html": "/react-gh-pages/index.html",
-    "main.5221f1cf.css.map": "/react-gh-pages/static/css/main.5221f1cf.css.map",
-    "main.49cddb6a.js.map": "/react-gh-pages/static/js/main.49cddb6a.js.map",
-    "787.4c9cbaa8.chunk.js.map": "/react-gh-pages/static/js/787.4c9cbaa8.chunk.js.map"
+    "main.css": "/empire-media/static/css/main.5221f1cf.css",
+    "main.js": "/empire-media/static/js/main.8f7c1bec.js",
+    "static/js/787.4c9cbaa8.chunk.js": "/empire-media/static/js/787.4c9cbaa8.chunk.js",
+    "index.html": "/empire-media/index.html",
+    "main.5221f1cf.css.map": "/empire-media/static/css/main.5221f1cf.css.map",
+    "main.8f7c1bec.js.map": "/empire-media/static/js/main.8f7c1bec.js.map",
+    "787.4c9cbaa8.chunk.js.map": "/empire-media/static/js/787.4c9cbaa8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5221f1cf.css",
-    "static/js/main.49cddb6a.js"
+    "static/js/main.8f7c1bec.js"
   ]
 }
