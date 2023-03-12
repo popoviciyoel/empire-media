@@ -1,0 +1,25 @@
+.header {
+  padding: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  display: flex;
+  justify-content: space-between;
+  /* border: grey solid 1px; */
+  /* margin-bottom: 5%; */
+}
+
+.lastPublishedDate {
+  font-size: 10px;
+  color: grey;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+}
+
+.change {
+  display: flex;
+  font-size: 10px;
+  justify-content: space-between;
+}
