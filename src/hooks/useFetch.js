@@ -79,7 +79,7 @@ const useFetch = (selectedPeriod) => {
   }/${endDate.getDate()}/${endDate.getFullYear()}%20${endDate.getHours()}:${endDate.getMinutes()}&_fields=ChartBars.StartDate,ChartBars.High,ChartBars.Low,ChartBars.StartTime,ChartBars.Open,ChartBars.Close,ChartBars.Volume,ChartBars.UTCOffset`;
 
   // use react query to cache api response, cache becomes invaidated just incase data becomes stale
-  const { isLoading, error, data, isFetching } = useQuery(selectedPeriod, () =>
+  const { isLoading, error, data } = useQuery(selectedPeriod, () =>
     fetch(RESOURCE).then((res) => res.json())
   );
   return { isLoading, data, error };
