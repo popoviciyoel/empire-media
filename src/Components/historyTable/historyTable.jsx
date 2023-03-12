@@ -1,19 +1,14 @@
+import { dateComparator, formatDataToPercentage } from "./../../utils";
+
 import { Box } from "@mui/system";
 import { DataGrid } from "@mui/x-data-grid";
-import { formatDataToPercentage } from "./../../utils";
 
 const columns = [
   {
     field: "date",
     headerName: "Date",
     width: 150,
-    valueFormatter: ({ value }) => {
-      const time = new Date(value);
-      return (
-        time.toLocaleTimeString("en-US", { timeStyle: "short" }) +
-        `(${time.getDate()}/${time.getMonth() + 1}/${time.getFullYear()})`
-      );
-    },
+    sortComparator: dateComparator,
   },
   { field: "high", headerName: "High", width: 90 },
   { field: "low", headerName: "Low", width: 90 },
@@ -35,18 +30,36 @@ const columns = [
   },
 ];
 
-const HistoryTable = ({ data }) => {
-  const rows = data.map((row, index) => {
-    return {
-      id: index,
-      date: row.Date,
-      high: row.High,
-      low: row.Low,
-      open: row.Open,
-      close: row.Close,
-      change: row.change,
-    };
-  });
+const HistoryTable = ({ data, selectedPeriod }) => {
+  let rows;
+  if (selectedPeriod === "1 Week") {
+    // use this to display date format
+    rows = data.map((row, index) => {
+      return {
+        id: index,
+        date: row.StartDate,
+        high: row.High,
+        low: row.Low,
+        open: row.Open,
+        close: row.Close,
+        change: row.change,
+      };
+    });
+  } else {
+    // use this to display time formate
+    rows = data.map((row, index) => {
+      return {
+        id: index,
+        date: row.StartTime,
+        high: row.High,
+        low: row.Low,
+        open: row.Open,
+        close: row.Close,
+        change: row.change,
+      };
+    });
+  }
+
   return (
     <Box
       sx={{
@@ -74,8 +87,6 @@ const HistoryTable = ({ data }) => {
             : "none";
         }}
         hideFooter
-        // pageSize={5}
-        // rowsPerPageOptions={[5]}
       />
     </Box>
   );

@@ -12,7 +12,6 @@ const TabNavigator = () => {
   const [navTab, setNavTab] = useState(0);
   const [selectedPeriod, setSelectedPeriod] = useState("1 Minute");
   const { data, isLoading, error } = useFetch(selectedPeriod);
-  console.log(data);
 
   let content;
 
@@ -24,7 +23,12 @@ const TabNavigator = () => {
     content = (
       <>
         {navTab === 0 && <StockChart data={data} />}
-        {navTab === 1 && <HistoryTable data={calculatePercentage(data)} />}
+        {navTab === 1 && (
+          <HistoryTable
+            data={calculatePercentage(data)}
+            selectedPeriod={selectedPeriod}
+          />
+        )}
       </>
     );
   }
